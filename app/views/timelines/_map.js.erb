@@ -8,7 +8,7 @@ var origin      = new google.maps.LatLng(<%= timeline.steps.first.lat_lng %>);
 var destination = new google.maps.LatLng(<%= timeline.steps.last.lat_lng %>);
 
 var request = {
-    origin:      origin,
+    origin: origin,
     <% if timeline.steps.size > 2 %>
       waypoints: [
         <% timeline.steps[1..-2].each do |step| %>

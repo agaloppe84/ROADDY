@@ -12,6 +12,14 @@
 .timeline-map {
   position: relative;
   padding-bottom: 50px;
-  .map {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.timeline-infos {
+  margin: 50px 0;
+  h3 {
+    margin: 0;
   }
 }
