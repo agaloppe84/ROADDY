@@ -1,1 +1,2 @@
-$('#step-<%= @step.id %>').remove();
+$('#step-<%= @step.id %>').closest('.step-wrapper').remove();
+<%= render 'timelines/map', timeline: @step.timeline %>

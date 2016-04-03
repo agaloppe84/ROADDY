@@ -1,17 +1,23 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-6">
-      <%= render "timelines/form", timeline: @timeline %>
-      <hr>
-      <div id="timeline">
-        <% @timeline.steps.each do |step| %>
-          <%= render "steps/show", step: step %>
-        <% end %>
-      </div>
+<div class="flex fixed">
+  <div class="timeline-content">
+    <%= render "timelines/form", timeline: @timeline %>
+    <hr>
+    <div id="timeline">
+      <% @timeline.steps.each do |step| %>
+        <%= render "steps/show", step: step %>
+      <% end %>
+    </div>
 
-      <%= render "steps/form", timeline: @timeline, step: @step %>
-    </div>
-    <div class="col-sm-6 hidden-xs">
-    </div>
+    <%= render "steps/form", timeline: @timeline, step: @step %>
+  </div>
+  <div class="timeline-map">
+    <div class="map" id="directions" style='width: 100%; height: 100%;'></div>
   </div>
 </div>
+
+
+<% content_for(:after_js) do %>
+  <script>
+    <%= render "timelines/map.js.erb", timeline: @timeline %>
+  </script>
+<% end %>
