@@ -2,6 +2,9 @@ class TimelinesController < ApplicationController
 
   def index
     @timelines = Timeline.all
+    if params[:destination]
+      @timelines = Step.near(params[:destination], 300).map(&:timeline).uniq
+    end
   end
 
   def show
