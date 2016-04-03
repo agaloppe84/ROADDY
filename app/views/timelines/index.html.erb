@@ -1,6 +1,21 @@
-<span><h3 class="text-center itineraire-title">itinéraires</h3></span>
+<h3 class="text-center itineraire-title">Itinéraires autour de <%= params[:destination] %></h3>
+
+<p class="text-center">
+  <%= link_to "Nouvel itinéraire sur #{params[:destination]}", new_timeline_path() + "?destination=#{params[:destination]}", class: "btn btn-primary btn-sm"  %>
+</p>
+
 <hr>
 
+<% unless @timelines.any? %>
+  <h3 class="text-muted text-center">
+    <i class="fa fa-cloud motorcycle-smoke"></i>
+    <i class="fa fa-motorcycle motorcycle-club"></i>
+    <br>
+    <em class="slim">
+      Pas d'itinéraire pour le moment, voulez vous en créer un ?
+    </em>
+  </h3>
+<% end %>
 <% @timelines.each do |timeline| %>
   <div class="infotimeline">
     <span><h6 class="destination-title">- <%= timeline.title %></h6></span>

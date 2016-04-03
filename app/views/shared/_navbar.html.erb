@@ -10,9 +10,6 @@
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
-
-
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -45,7 +42,7 @@
     <% end %>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "Créer un voyage", new_timeline_path(), class: "navbar-wagon-item btn-perso" %>
+    <%#= link_to "Créer un voyage", new_timeline_path(), class: "navbar-wagon-item btn-perso" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

@@ -23,7 +23,7 @@ class TimelinesController < ApplicationController
   end
 
   def new
-    @timeline = current_user.timelines.create
+    @timeline = current_user.timelines.create(destination: params[:destination])
     redirect_to edit_timeline_path(@timeline)
   end
 
