@@ -13,3 +13,20 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+html {
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.fixed {
+  position: absolute;
+  top: $navbar-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}

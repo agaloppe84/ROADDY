@@ -1,4 +1,5 @@
 <% if @moved %>
-  $currentStep = $('#step-<%= @step.id %>');
+  $currentStep = $('#step-<%= @step.id %>').closest('.step-wrapper');
   $currentStep.insertBefore($currentStep.prev());
+  <%= render 'timelines/map', timeline: @step.timeline %>
 <% end %>
