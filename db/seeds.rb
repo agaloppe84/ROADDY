@@ -54,16 +54,16 @@ step01 = Step.create!(
 
 step02 = Step.create!(
   timeline: bordeaux,
-  address: "Tour Pey Berland",
-  title: "Point de vue de Bordeaux",
+  address: "Place Pey Berland, 33000 Bordeaux",
+  title: "Visite Tour Pey Berland",
   scheduled_at: Date.today,
   position: 2,
   category: lieu)
 
 step02 = Step.create!(
   timeline: bordeaux,
-  address: "CIVB",
-  title: "Dégustation de pinard",
+  address: "1 Cours du 30 Juillet, 33075 Bordeaux",
+  title: "Dégustation au CIVB",
   scheduled_at: Date.today,
   position: 3,
   category: restauration)
