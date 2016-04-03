@@ -1,0 +1,17 @@
+.timeline-map, .timeline-content {
+  flex: 1;
+  height: 100vh;
+}
+
+.timeline-content {
+  padding: 10px;
+  overflow-y: auto;
+  padding-bottom: 50px;
+}
+
+.timeline-map {
+  position: relative;
+  padding-bottom: 50px;
+  .map {
+  }
+}
