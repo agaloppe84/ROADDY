@@ -71,7 +71,6 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 
 .destination-title {
@@ -89,3 +88,40 @@
   opacity: 0.8;
 }
 
+.itineraire-title {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.itineraire-card {
+  height: 45px;
+  width: 75%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+}
+
+.btn-perso {
+  font-size: 13px;
+  border: 1px solid #00ADB5;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #00ADB5;
+}
+
+.btn-perso:hover {
+  font-size: 13px;
+  border: 1px solid #00ADB5;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: white;
+  background-color: #00ADB5;
+}
+
+.bigtitle {
+  font-weight: 300;
+  font-size: 28px;
+}
