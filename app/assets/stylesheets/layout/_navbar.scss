@@ -2,7 +2,7 @@
 
 $navbar-height: 50px;
 .navbar-wagon {
-  background: none;
+  background-color: #2C2D34;
   transition: all 0.3s ease;
   display: flex;
   height: $navbar-height;
@@ -22,7 +22,7 @@ $navbar-height: 50px;
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 25px;
+  width: 150px;
 }
 
 /* Navbar right section (with form, links, button) */
