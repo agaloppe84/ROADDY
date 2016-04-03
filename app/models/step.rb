@@ -6,8 +6,14 @@ class Step < ActiveRecord::Base
   after_validation :geocode, if: :address_changed?
   acts_as_list scope: :timeline
 
+  attr_accessor :distance_with_next_step
+
 
   def lat_lng
     "#{latitude}, #{longitude}"
+  end
+
+  def to_lat_lng
+    [latitude, longitude]
   end
 end

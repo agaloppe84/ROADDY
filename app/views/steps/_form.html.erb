@@ -4,11 +4,11 @@
   <div class="step step-form">
     <h4 class="text-center">Ajouter une étape</h4>
     <%= simple_form_for [timeline, step], remote: true do |f| %>
-      <%= f.input :title, label: false, placeholder: "Titre de l'étape" %>
-      <%= f.input :address, input_html: { id: "autocomplete" }, label: false %>
+      <%= f.input :title, label: false, placeholder: "Titre de l'étape", input_html: { class: "input-lg" }  %>
       <div class="row">
         <div class="col-sm-6">
-          <%= f.input :scheduled_at, label: false %>
+          <%= f.input :address, input_html: { id: "autocomplete" }, label: false, placeholder: "Indiquez un lieu" %>
+          <%#= f.input :scheduled_at, label: false %>
         </div>
         <div class="col-sm-6">
           <%= f.association :category, label: false, prompt: "Catégorie" %>

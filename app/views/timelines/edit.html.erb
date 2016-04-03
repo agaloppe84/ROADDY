@@ -1,14 +1,40 @@
 <div class="flex fixed">
   <div class="timeline-content">
-    <%= render "timelines/form", timeline: @timeline %>
-    <hr>
-    <div id="timeline">
-      <% @timeline.steps.each do |step| %>
-        <%= render "steps/show", step: step %>
-      <% end %>
-    </div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
+          <i class="fa fa-cogs"></i> Paramètres
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#steps" aria-controls="steps" role="tab" data-toggle="tab">
+          <i class="fa fa-map-marker"></i> Étapes
+        </a>
+      </li>
+    </ul>
 
-    <%= render "steps/form", timeline: @timeline, step: @step %>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="settings">
+        <h3 class="tab-title">
+          Paramètres de mon voyage
+        </h3>
+        <%= render "timelines/form", timeline: @timeline %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="steps">
+        <h3 class="tab-title">
+          Les étapes de mon voyage
+        </h3>
+        <div id="timeline" class="step-edit">
+          <% @timeline.steps.each do |step| %>
+            <%= render "steps/show", step: step %>
+          <% end %>
+        </div>
+
+        <%= render "steps/form", timeline: @timeline, step: @step %>
+      </div>
+    </div>
   </div>
   <div class="timeline-map">
     <div class="map" id="directions" style='width: 100%; height: 100%;'></div>

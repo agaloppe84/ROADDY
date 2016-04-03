@@ -1,13 +1,15 @@
 .step {
   border-radius: 5px;
-  border: 1px solid #CCC;
   padding: 5px;
   margin: 5px 0;
   display: flex;
   flex: 1;
+  border-bottom: 1px solid #EEE;
   &.step-form {
     display: block;
-    padding: 10px 15px;
+    padding: 0px 15px 10px;
+    background: #EEE;
+    margin-top: 50px;
   }
   .step-position {
     display: flex;
@@ -27,6 +29,7 @@
 
 .step-wrapper {
   display: flex;
+  position: relative;
   .step-waypoint {
     width: 20px;
     position: relative;
@@ -69,5 +72,49 @@
       left: -6px;
       margin-top: 0;
     }
+  }
+  &:first-child {
+    .step-waypoint:after {
+      top: 50%;
+    }
+  }
+  &:last-child {
+    .step {
+      border-bottom: none;
+    }
+    .step-waypoint:after {
+      bottom: 50%;
+    }
+  }
+}
+.step-show {
+  .step {
+    padding: 30px 0;
+  }
+}
+
+.step-edit {
+  .step-wrapper:last-child {
+    .step-waypoint:after {
+        bottom: 0;
+    }
+  }
+}
+
+.step-show hr {
+  display: none;
+}
+
+.step-distance {
+  color: #CCC;
+  font-weight: 300;
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  bottom: -15px;
+  span {
+    background: white;
+    padding: 20px
   }
 }
