@@ -1,7 +1,7 @@
 
 <div class="banner" style="background-image: url(<%= image_url 'background.jpeg' %>)">
   <div class="banner-content">
-    <h1>Roaddy</h1>
+    <h1 class="bigtitle">Roaddy</h1>
     <p>Inspired people for inspiring trips</p>
     <%= form_tag timelines_path, method: "get", class: "navbar-wagon-search" do %>
       <%= text_field_tag "destination", nil, placeholder: "Où va-t'on ?", class: "navbar-wagon-search-input", id: "autocomplete" %>

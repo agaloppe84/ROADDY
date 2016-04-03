@@ -1,10 +1,12 @@
-<h3 class="text-center">My timelines</h3>
+<span><h3 class="text-center itineraire-title">itinéraires</h3></span>
+<hr>
+
 <% @timelines.each do |timeline| %>
-  <div class="text-center">
-    <h5>Destination : <%= timeline.destination %> / <%= timeline.title %></h5>
-    <p>Begin on = <%= timeline.start_date %></p>
-    <p>End on = <%= timeline.end_date %></p>
-    <p>Budget = <%= timeline.budget %> €</p>
-    <h5><%= link_to "see timeline", timeline_path(timeline),class: "btn btn-primary" %></h5>
+  <div class="infotimeline">
+    <span><h6 class="destination-title">- <%= timeline.title %></h6></span>
+    <span><h6 class="startdate">Début : <%= timeline.start_date.strftime('%v') %></h6></span>
+    <span><h6 class="enddate">Fin : <%= timeline.end_date.strftime('%v') %></h6></span>
+    <h5><%= link_to "Détails", timeline_path(timeline),class: "btn-perso" %></h5>
   </div>
+  <hr>
 <% end %>
