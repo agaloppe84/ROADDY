@@ -19,8 +19,8 @@
 <% @timelines.each do |timeline| %>
   <div class="infotimeline">
     <span><h6 class="destination-title">- <%= timeline.title %></h6></span>
-    <span><h6 class="startdate">Début : <%= timeline.start_date.strftime('%v') %></h6></span>
-    <span><h6 class="enddate">Fin : <%= timeline.end_date.strftime('%v') %></h6></span>
+    <span><h6 class="startdate">Début : <%= timeline.start_date.strftime('%v') if timeline.start_date %></h6></span>
+    <span><h6 class="enddate">Fin : <%= timeline.end_date.strftime('%v') if timeline.end_date %></h6></span>
     <h5><%= link_to "Détails", timeline_path(timeline),class: "btn-perso" %></h5>
   </div>
   <hr>
