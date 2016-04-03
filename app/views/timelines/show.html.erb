@@ -1,27 +1,44 @@
-<h3 class="text-center"><%= @timeline.title %></h3>
 
-  <div class="text-center">
-    <h5>Destination : <%= @timeline.destination %></h5>
-    <p>Begin on = <%= @timeline.start_date.strftime('%v') %></p>
-    <p>End on = <%= @timeline.end_date %></p>
-    <p>Budget = <%= @timeline.budget %> €</p>
-    <h5><%= link_to "back", timelines_path(@timeline),class: "btn btn-primary" %></h5>
+
+
+  <div class="timelineshow">
+    <h3 class="text-center"><%= @timeline.title %></h3>
   </div>
 
-
-<% @timeline.steps.each do |step| %>
-  <div class="text-center">
-    <h5><%= step.title %> </h5>
-    <p><%= step.address %></p>
-    <p>Scheduled on = <%= step.scheduled_at %></p>
-    <p><%= step.category %></p>
+  <div class="infotimeline">
+    <span><h6 class="destination-title">Destination : <%= @timeline.destination %></h6></span>
+    <span><h6 class="startdate">Début : <%= @timeline.start_date.strftime('%v') %></h6></span>
+    <span><h6 class="enddate">Fin : <%= @timeline.end_date.strftime('%v') %></h6></span>
+    <span><h6 class="destination-title">Budget = <strong><%= @timeline.budget %> €</strong></h6></span>
   </div>
-<% end %>
+
+<div class="container-fluid">
+  <div class="row">
+
+  <div class="col-xs-5">
+    <% @timeline.steps.each do |step| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_url 'background.jpeg' %>);">
+      <div class="card-category label label-primary"><%= step.category.name %></div>
+      <div class="card-description">
+        <h2><%= step.title %></h2>
+        <p>Adresse : <%= step.address %></p>
+      </div>
+      </div>
+
+
+    <% end %>
+  </div>
+
+    <div class="col-xs-7">
+      <div id="map" style="width: 90%; height: 500px;"></div>
+    </div>
+
+  </div>
+</div>
 
 
 
 
-  <div id="map" style="width: 50%; height: 600px;"></div>
 
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
@@ -35,6 +52,9 @@
     })
   <% end %>
 <% end %>
+
+
+<h5><%= link_to "back", timelines_path(@timeline),class: "btn btn-primary" %></h5>
 
 
 

@@ -1,0 +1,91 @@
+.stepcard {
+  height: 60px;
+  margin-bottom: 30px;
+  background-color: yellow;
+}
+
+
+.card {
+  height: 130px;
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 26px;
+  border-radius: 4px;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: lighter;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 20px;
+  font-weight: 200;
+}
+.card-description p {
+  font-size: 12px;
+  }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+
+.timelineshow {
+  width: 50%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  h3{
+    font-size: 19px;
+    font-weight: 300;
+    opacity: 0.8;
+  }
+}
+
+.infotimeline {
+  height: 45px;
+  width: 75%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.destination-title {
+  font-size: 13px;
+}
+
+.startdate {
+  font-size: 13px;
+  color: #A9C52F;
+}
+
+.enddate {
+  font-size: 13px;
+  color: #E54861;
+  opacity: 0.8;
+}
+
