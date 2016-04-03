@@ -13,21 +13,15 @@
       </div>
     <% end %>
     <div class="step-content">
-      <div class="row">
-        <div class="col-xs-6">
-          <h4>
-            <%= step.title %>
-            <% if step.category.present? %>
-              <small>
-                <span class="label label-primary"><%= step.category.name %></span>
-              </small>
-            <% end %>
-          </h4>
-          <p class="text-muted"><%= step.address %></p>
-        </div>
-        <div class="col-xs-6 text-right">
-        </div>
-      </div>
+      <h4>
+        <%= step.title %>
+        <% if step.category.present? %>
+          <small>
+            <span class="label label-primary"><%= step.category.name %></span>
+          </small>
+        <% end %>
+      </h4>
+      <p class="text-muted"><%= step.address %></p>
     </div>
     <% if editable? %>
       <div class="step-actions">
