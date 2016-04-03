@@ -1,0 +1,20 @@
+<div class="step-wrapper">
+  <div class="step-waypoint step-add">
+  </div>
+  <div class="step step-form">
+    <h4 class="text-center">Ajouter une étape</h4>
+    <%= simple_form_for [timeline, step], remote: true do |f| %>
+      <%= f.input :title %>
+      <%= f.input :address, input_html: { id: "autocomplete" } %>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.input :scheduled_at %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.association :category %>
+        </div>
+      </div>
+      <%= f.submit "Ajouter cette étape", class: "btn btn-default btn-block" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="step-wrapper">
+  <div class="step-waypoint">
+  </div>
+  <div class="step" id="step-<%= step.id %>">
+    <div class="step-position">
+      <%= link_to up_step_path(step), method: :post, remote: true, class: "step-up" do %>
+        <i class="fa fa-angle-up"></i>
+      <% end %>
+      <%= link_to down_step_path(step), method: :post, remote: true, class: "step-down" do %>
+        <i class="fa fa-angle-down"></i>
+      <% end %>
+    </div>
+    <div class="step-content">
+      <h4><%= step.title %></h4>
+      <p class="text-muted"><%= step.address %></p>
+      <div class="row">
+        <div class="col-xs-6">
+          <%#= l step.scheduled_at, format: :short %>
+        </div>
+        <div class="col-xs-6 text-right">
+          <% if step.category.present? %>
+            <span class="label label-primary"><%= step.category.name %></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="step-actions">
+      <%= link_to step_path(step), method: :delete, remote: true, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette étape ?"} do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+
+</div>
