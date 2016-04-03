@@ -4,7 +4,7 @@
     <h1 class="bigtitle">Roaddy</h1>
     <p>Inspired people for inspiring trips</p>
     <%= form_tag timelines_path, method: "get", class: "navbar-wagon-search" do %>
-      <%= text_field_tag "destination", nil, placeholder: "Destination", class: "navbar-wagon-search-input", id: "autocomplete" %>
+      <%= text_field_tag "destination", nil, placeholder: "Où va-t'on ?", class: "navbar-wagon-search-input", id: "autocomplete" %>
       <%= button_tag type: "submit", class: "navbar-wagon-search-btn" do %>
         <i class="fa fa-search"></i>
       <% end %>

@@ -11,6 +11,11 @@ class TimelinesController < ApplicationController
 
   def show
     @timeline = Timeline.find(params[:id])
+    @timeline.steps.each do |step|
+      unless step.last?
+        step.distance_with_next_step = Geocoder::Calculations.distance_between(step.to_lat_lng, step.lower_item.to_lat_lng)
+      end
+    end
     @markers = Gmaps4rails.build_markers(@timeline.steps) do |step, marker|
       marker.lat step.latitude
       marker.lng step.longitude

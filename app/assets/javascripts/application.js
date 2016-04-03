@@ -1,10 +1,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require_tree
 //= require underscore
 //= require gmaps/google
-
+//= require datedropper
+//= require_tree
 
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
@@ -32,4 +32,12 @@ function onPlaceChanged() {
 
 google.maps.event.addDomListener(window, 'load', function() {
   initializeAutocomplete('autocomplete');
+});
+
+
+$(".datepicker").dateDropper({
+  maxYear: 2025,
+  minYear: 2015,
+  lang: "fr",
+  init_animation: "bounce"
 });
