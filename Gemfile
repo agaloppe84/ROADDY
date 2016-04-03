@@ -8,6 +8,15 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem 'geocoder'
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
+gem 'acts_as_list'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -24,8 +33,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+
+
 end
 
 group :production do
