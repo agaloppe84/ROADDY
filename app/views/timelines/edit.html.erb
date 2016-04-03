@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render "timelines/form", timeline: @timeline %>
+      <hr>
+      <div id="timeline">
+        <% @timeline.steps.each do |step| %>
+          <%= render "steps/show", step: step %>
+        <% end %>
+      </div>
+
+      <%= render "steps/form", timeline: @timeline, step: @step %>
+    </div>
+    <div class="col-sm-6 hidden-xs">
+    </div>
+  </div>
+</div>

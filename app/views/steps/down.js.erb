@@ -1,0 +1,4 @@
+<% if @moved %>
+  $currentStep = $('#step-<%= @step.id %>');
+  $currentStep.insertAfter($currentStep.next());
+<% end %>

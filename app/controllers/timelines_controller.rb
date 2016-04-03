@@ -1,5 +1,7 @@
 class TimelinesController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:edit, :update, :destroy]
+
   def index
     @timelines = Timeline.all
     if params[:destination]
@@ -16,32 +18,30 @@ class TimelinesController < ApplicationController
   end
 
   def new
-    @timeline = Timeline.new
-  end
-
-  def create
-    @timeline = Timeline.new(timeline_params)
-    @timeline.save
+    @timeline = current_user.timelines.create
+    redirect_to edit_timeline_path(@timeline)
   end
 
   def edit
-    @timeline = Timeline.find(params[:id])
+    @step = Step.new
+    @timeline = current_user.timelines.find(params[:id])
   end
 
   def update
-    @timeline = Timeline.find(params[:id])
+    @timeline = current_user.timelines.find(params[:id])
     @timeline.update(timeline_params)
+    redirect_to edit_timeline_path(@timeline)
   end
 
   def destroy
-    @timeline = Timeline.find(params[:id])
+    @timeline = current_user.timelines.find(params[:id])
     @timeline.destroy
   end
 
   private
 
   def timeline_params
-    params.require(:timeline).permit(:start_date, :end_date, :destination, :budget, :latitude, :longitude)
+    params.require(:timeline).permit(:title, :start_date, :end_date, :destination, :budget, :latitude, :longitude)
   end
 
 end

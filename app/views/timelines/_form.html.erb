@@ -1,0 +1,15 @@
+<%= simple_form_for @timeline do |f| %>
+  <%= f.input :title, placeholder: "Titre du voyage" %>
+  <div class="row">
+    <div class="col-xs-4">
+      <%= f.input :budget, placeholder: "optionnel"%>
+    </div>
+    <div class="col-xs-4">
+      <%= f.input :start_date %>
+    </div>
+    <div class="col-xs-4">
+      <%= f.input :end_date %>
+    </div>
+  </div>
+  <%= f.submit "Enregistrer la timeline", class: "btn btn-default btn-block" %>
+<% end %>

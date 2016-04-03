@@ -1,6 +1,6 @@
+Step.destroy_all
+Timeline.destroy_all
 User.destroy_all
-
-
 
 
 puts "Seed started"
@@ -50,7 +50,8 @@ step01 = Step.create!(
   title: "Visite de la CCI de Bordeaux",
   scheduled_at: Date.today,
   position: 1,
-  category: lieu)
+  category: lieu
+)
 
 step02 = Step.create!(
   timeline: bordeaux,
@@ -58,7 +59,8 @@ step02 = Step.create!(
   title: "Visite Tour Pey Berland",
   scheduled_at: Date.today,
   position: 2,
-  category: lieu)
+  category: lieu
+)
 
 step02 = Step.create!(
   timeline: bordeaux,
@@ -66,7 +68,8 @@ step02 = Step.create!(
   title: "Dégustation au CIVB",
   scheduled_at: Date.today,
   position: 3,
-  category: restauration)
+  category: restauration
+)
 
 # ------------------------------------------------------------------------ #
 
