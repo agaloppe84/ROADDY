@@ -1,6 +1,6 @@
 User.destroy_all
-Timeline.destroy_all
-Step.destroy_all
+
+
 
 
 puts "Seed started"
@@ -8,7 +8,7 @@ puts "Seed started"
 # -------------------------------- Users --------------------------------- #
 puts "Seeding Users"
 
-julie = User.create(email: "michel@gmail.com",  password: "1234soleil")
+julie = User.create(email: "julie@gmail.com",  password: "123soleil")
 
 # ------------------------------------------------------------------------ #
 
@@ -21,9 +21,9 @@ julie = User.create(email: "michel@gmail.com",  password: "1234soleil")
 # ------------------------------ Timelines ------------------------------- #
 puts "Seeding timelines"
 
-californie = Timeline.create!(
-  title: "mon trip en californie",
-  destination: "californie",
+bordeaux = Timeline.create!(
+  title: "Mon trip à Bordeaux",
+  destination: "Bordeaux",
   budget: 6000,
   user: julie,
   start_date: Date.today + 4.days,
@@ -33,31 +33,40 @@ californie = Timeline.create!(
 
 # ------------------------------------------------------------------------ #
 
+activite      = Category.create!(name: "Activité")
+lieu          = Category.create!(name: "Lieu d'intérêt")
+hebergement   = Category.create!(name: "Hébergement")
+restauration  = Category.create!(name: "Restauration")
+nocturne      = Category.create!(name: "Vie nocturne")
+magasin       = Category.create!(name: "Magasin")
 
 
 # ------------------------------ Steps ------------------------------- #
 puts "Seeding steps"
 
-step01 = Step.create!(timeline: californie,
-  adress: "18 place de la bourse,33000,bordeaux",
-  title: "étape 01",
+step01 = Step.create!(
+  timeline: bordeaux,
+  address: "17 place de la bourse,33000,bordeaux",
+  title: "Visite de la CCI de Bordeaux",
   scheduled_at: Date.today,
   position: 1,
-  category: "restaurant")
+  category: lieu)
 
-step02 = Step.create!(timeline: californie,
-  adress: "californie-02",
-  title: "étape 02",
+step02 = Step.create!(
+  timeline: bordeaux,
+  address: "Tour Pey Berland",
+  title: "Point de vue de Bordeaux",
   scheduled_at: Date.today,
   position: 2,
-  category: "musée")
+  category: lieu)
 
-step02 = Step.create!(timeline: californie,
-  adress: "californie-03",
-  title: "étape 03",
+step02 = Step.create!(
+  timeline: bordeaux,
+  address: "CIVB",
+  title: "Dégustation de pinard",
   scheduled_at: Date.today,
   position: 3,
-  category: "foot")
+  category: restauration)
 
 # ------------------------------------------------------------------------ #
 

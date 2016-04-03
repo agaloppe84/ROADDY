@@ -3,11 +3,11 @@
   <div class="banner-content">
     <h1>Roaddy</h1>
     <p>Inspired people for inspiring trips</p>
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Destination">
-      <button type="submit" class="navbar-wagon-search-btn">
+    <%= form_tag timelines_path, method: "get", class: "navbar-wagon-search" do %>
+      <%= text_field_tag "destination", nil, placeholder: "Destination", class: "navbar-wagon-search-input" %>
+      <%= button_tag type: "submit", class: "navbar-wagon-search-btn" do %>
         <i class="fa fa-search"></i>
-      </button>
-    </form>
+      <% end %>
+    <% end %>
   </div>
 </div>

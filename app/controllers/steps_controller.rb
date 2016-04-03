@@ -39,7 +39,7 @@ class StepsController < ApplicationController
   private
 
   def step_params
-    params.require(:step).permit(:adress, :title, :scheduled_at, :position, :category, :latitude, :longitude)
+    params.require(:step).permit(:address, :title, :scheduled_at, :position, :category, :latitude, :longitude)
   end
 
 end

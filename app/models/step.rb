@@ -1,7 +1,8 @@
 class Step < ActiveRecord::Base
   belongs_to :timeline
+  belongs_to :category
 
-  geocoded_by :adress
-  after_validation :geocode, if: :adress_changed?
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
   acts_as_list scope: :timeline
 end
